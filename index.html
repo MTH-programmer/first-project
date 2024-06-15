@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        div table tr{
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        div table tr td button:hover{
+            background-color: aqua;
+            color: black;
+            transition: 0.4s;
+            
+        }
+        div table tr td input{
+            height: 50px;
+            width: 350px;
+            margin-bottom: 20px;
+            background-color: white;
+            font-size: 20px;
+        }
+        div table tr td button{
+            height: 50px;
+            width: 70px;
+            background-color: black;
+            color: white;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <table>
+        <tr>
+            <td><input type="text" id="input1"></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="dealete()">C</button></td>
+            <td><button onclick="calculator('(')">(</button></td>
+            <td><button onclick="calculator(')')">)</button></td>
+            <td><button onclick="calculator('{')">{</button></td>
+            <td><button onclick="calculator('}')">}</button></td>
+    
+        </tr>
+
+        <tr>
+            <td><button onclick="calculator(7)">7</button></td>
+            <td><button onclick="calculator(8)">8</button></td>
+            <td><button onclick="calculator(9)">9</button></td>
+            <td><button onclick="calculator('[')">[</button></td>
+            <td><button onclick="calculator(']')">]</button></td>
+            
+        </tr>
+
+        <tr>
+            <td><button onclick="calculator(4)">4</button></td>
+            <td><button onclick="calculator(5)">5</button></td>
+            <td><button onclick="calculator(6)">6</button></td>
+            <td><button onclick="calculator('%')">%</button></td>
+            <td><button onclick="pow()">x^2</button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="calculator(1)">1</button></td>
+            <td><button onclick="calculator(2)">2</button></td>
+            <td><button onclick="calculator(3)">3</button></td>
+            <td><button onclick="calculator('+')">+</button></td>
+            <td><button onclick="calculator('-')">-</button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="calculator(0)">0</button></td>
+            <td><button onclick="calculator('.')">.</button></td>
+            <td><button onclick="calculator('*')">x</button></td>
+            <td><button onclick="calculator('/')">/</button></td>
+            <td><button onclick="anwser()">=</button></td>
+        </tr>
+    </table>
+    </div>
+    
+
+
+
+    <script>
+        function dealete(){
+            let a = document.getElementById("input1").value = "";
+        }
+
+        function calculator(newValue){
+            let a = document.getElementById("input1").value += newValue;
+        }
+
+        function pow(){
+            let a = document.getElementById("input1").value;
+            document.getElementById("input1").value = a**2;
+        }
+
+        function anwser(){
+            let a = document.getElementById("input1").value;
+            let b = eval(a);
+            document.getElementById("input1").value = b;
+            
+        }
+    </script>
+
+    
+</body>
+</html>
